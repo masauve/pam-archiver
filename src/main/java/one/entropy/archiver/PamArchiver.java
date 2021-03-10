@@ -28,6 +28,8 @@ import static org.kie.camel.KieCamelUtils.asCamelKieName;
 @ContextName("archiver")
 public class PamArchiver extends RouteBuilder {
 
+    private static final String DEFAULT_CLIENT = "ProcessServices";
+
     private static final String IDS_HEADER = "PAM_IDs";
     private static final String DAYS_HEADER = "days_limit";
 
