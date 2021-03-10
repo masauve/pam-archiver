@@ -56,8 +56,9 @@ Les routes sont définies dans cette classe: [PamArchiver](src/main/java/one/ent
 
 ## Configuration additionnelle
 1. Un usager et mot de passe avec les accès au Kie-Server est requis. Voir fichier archiver.properties
+2. La tâche est présentement assignée à l'usager rhpamAdmin, modifier le processus au besoin.
 
-## How to prepare demo
+## Préparation du démo
 Pré-requis: Java 8 ou 11 et Maven 3.6+ 
 
 1. Installation de Jboss EAP 7.3
