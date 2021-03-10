@@ -31,7 +31,7 @@
         <version-galleon-maven-plugin>4.2.4.Final</version-galleon-maven-plugin>
         <version-maven-antrun-plugin>1.8</version-maven-antrun-plugin>
         <version-maven-assembly-plugin>2.4</version-maven-assembly-plugin>
-        <version-maven-compiler-plugin>3.1</version-maven-compiler-plugin>
+        <version-maven-compiler-plugin>3.8.1</version-maven-compiler-plugin>
         <version-maven-dependency-plugin>2.10</version-maven-dependency-plugin>
         <version-maven-release-plugin>2.5</version-maven-release-plugin>
         <version-maven-resources-plugin>2.7</version-maven-resources-plugin>
@@ -75,6 +75,12 @@
             <artifactId>camel-cdi</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.1</version>
+        </dependency>
+        
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-sql</artifactId>
@@ -297,6 +303,20 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <extensions>
+            <!-- Prevents this error, with JDK 13: -->
+            <!-- NoSuchMethodError: 'java.lang.String javax.annotation.Resource.lookup()' -->
+            <extension>
+                <groupId>javax.annotation</groupId>
+                <artifactId>javax.annotation-api</artifactId>
+                <version>1.3.1</version>
+            </extension>
+            <extension>
+                <groupId>javax.annotation</groupId>
+                <artifactId>jsr250-api</artifactId>
+                <version>1.0</version>
+            </extension>
+        </extensions>
     </build>
 
     <!-- Profiles -->
